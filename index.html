@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+// chapter 21 to 25
+        // 1. Merge first and last name, then greet the user.
+let firstName = prompt("Enter your first name:");
+let lastName = prompt("Enter your last name:");
+let fullName = firstName + " " + lastName;
+alert("Hello, " + fullName + "!");
+
+// 2. Favorite mobile phone model and length of input.
+let mobileModel = prompt("Enter your favorite mobile phone model:");
+document.write("My favorite phone is: " + mobileModel + "<br>");
+document.write("Length of string: " + mobileModel.length + "<br>");
+
+// 3. Index of letter 'n' in "Pakistani".
+document.write("Index of 'n' in 'Pakistani': " + "Pakistani".indexOf('n') + "<br>");
+
+// 4. Last index of letter 'l' in "Hello World".
+document.write("Last index of 'l' in 'Hello World': " + "Hello World".lastIndexOf('l') + "<br>");
+
+// 5. Character at 3rd index in "Pakistani".
+document.write("Character at index 3 in 'Pakistani': " + "Pakistani".charAt(3) + "<br>");
+
+// 6. Merge names using concat() method.
+fullName = firstName.concat(" ", lastName);
+alert("Hello, " + fullName + "!");
+
+// 7. Replace "Hyder" with "Islam" in "Hyderabad".
+let city = "Hyderabad";
+document.write("After replacement: " + city.replace("Hyder", "Islam") + "<br>");
+
+// 8. Replace "and" with "&" in a string.
+let message = "Ali and Sami are best friends. They play cricket and football together.";
+document.write("Updated message: " + message.replace(/and/g, "&") + "<br>");
+
+// 9. Convert string "472" to number 472.
+let str = "472";
+let num = Number(str);
+document.write("Value: " + str + ", Type: " + typeof str + "<br>");
+document.write("Value: " + num + ", Type: " + typeof num + "<br>");
+
+// 10. Convert user input to uppercase.
+let userInput = prompt("Enter some text:");
+document.write("Uppercase: " + userInput.toUpperCase() + "<br>");
+
+// 11. Convert user input to title case.
+userInput = prompt("Enter some text:");
+let titleCase = userInput.toLowerCase().split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ");
+document.write("Title Case: " + titleCase + "<br>");
+
+// 12. Convert number to string and remove dot.
+num = 35.36;
+let numStr = num.toString().replace(".", "");
+document.write("Result: " + numStr + "<br>");
+
+// 13. Validate username.
+let username = prompt("Enter your username:");
+if (/[!@.,]/.test(username)) {
+    alert("Please enter a valid username without special characters (@, ., , , !).");
+}
+
+// 14. Search an item in the array.
+let items = ["cake", "apple pie", "cookie", "chips", "patties"];
+let searchItem = prompt("Enter item to search:").toLowerCase();
+if (items.includes(searchItem)) {
+    alert(searchItem + " is available in the bakery.");
+} else {
+    alert("We are sorry. " + searchItem + " is not available in the bakery.");
+}
+
+// 15. Validate password.
+let password = prompt("Enter your password:");
+if (!/^[a-zA-Z][a-zA-Z0-9]{5,}$/.test(password)) {
+    alert("Password must contain alphabets and numbers, not start with a number, and be at least 6 characters long.");
+}
+
+// 16. Convert string to array and display elements.
+let university = "University of Karachi";
+university.split("").forEach(char => document.write(char + "<br>"));
+
+// 17. Display the last character of user input.
+userInput = prompt("Enter some text:");
+document.write("Last character: " + userInput.charAt(userInput.length - 1) + "<br>");
+
+// 18. Count occurrences of "the" in a string.
+let text = "The quick brown fox jumps over the lazy dog";
+let count = (text.toLowerCase().match(/\bthe\b/g) || []).length;
+document.write("Occurrences of 'the': " + count + "<br>");
+
+// chapter 26 to 30
+
+// 1. Positive integer: round off, floor, ceil.
+let positiveNum = parseFloat(prompt("Enter a positive integer:"));
+document.write("Number: " + positiveNum + "<br>");
+document.write("Round off value: " + Math.round(positiveNum) + "<br>");
+document.write("Floor value: " + Math.floor(positiveNum) + "<br>");
+document.write("Ceil value: " + Math.ceil(positiveNum) + "<br>");
+
+// 2. Negative floating-point number: round off, floor, ceil.
+let negativeNum = parseFloat(prompt("Enter a negative floating-point number:"));
+document.write("Number: " + negativeNum + "<br>");
+document.write("Round off value: " + Math.round(negativeNum) + "<br>");
+document.write("Floor value: " + Math.floor(negativeNum) + "<br>");
+document.write("Ceil value: " + Math.ceil(negativeNum) + "<br>");
+
+// 3. Absolute value of a number.
+let num1 = parseFloat(prompt("Enter a number to find its absolute value:"));
+document.write("The absolute value of " + num1 + " is: " + Math.abs(num1) + "<br>");
+
+// 4. Simulate a dice.
+let diceValue = Math.floor(Math.random() * 6) + 1;
+document.write("Random dice value: " + diceValue + "<br>");
+
+// 5. Simulate a coin toss.
+let coinValue = Math.random() < 0.5 ? "Heads" : "Tails";
+document.write("Random coin value: " + coinValue + "<br>");
+
+// 6. Random number between 1 and 100.
+let randomNumber = Math.floor(Math.random() * 100) + 1;
+document.write("Random number between 1 and 100: " + randomNumber + "<br>");
+
+// 7. Parse and display weight.
+let weight = prompt("Enter your weight in any format (e.g., 50, 50kgs, 50.2kgs):");
+let parsedWeight = parseFloat(weight);
+document.write("Your weight is: " + parsedWeight + " kilograms<br>");
+
+// 8. Secret number guessing game.
+let secretNumber = Math.floor(Math.random() * 10) + 1;
+let userGuess = parseInt(prompt("Guess the secret number between 1 and 10:"));
+if (userGuess === secretNumber) {
+    alert("Congratulations! You guessed the secret number.");
+} else {
+    alert("Try again! The secret number was " + secretNumber + ".");
+}
+    </script>
+</body>
+</html>
